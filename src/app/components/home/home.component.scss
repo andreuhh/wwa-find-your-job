@@ -196,15 +196,18 @@ HERO
 // main
 main {
   //background-color: red;
-  margin: 2% 5%;
+  margin: 2% 0%;
   text-align: center;
+}
+
+.cardSection {
+  padding: 0% 5%;
 }
 
 .cardRow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-
 
   &:first-of-type {
     padding: 3% 0 0 0;
@@ -221,7 +224,7 @@ main {
     border: 1px solid $lightGray;
     background-color: $lightBg;
 
-    &--noDesktop {
+    &--twoCol {
       display: none;
     }
 
@@ -276,13 +279,63 @@ main {
 }
 
 @media (max-width: 1024px) {
+
   .cardRow {
     grid-template-columns: repeat(2, 1fr);
+
+    .card {
+      &--twoCol {
+        display: block;
+      }
+    }
   }
 }
 
 @media (max-width: 700px) {
+
   .cardRow {
     grid-template-columns: 1fr;
+
+    .card {
+      &--twoCol {
+        display: none;
+      }
+    }
+  }
+}
+
+// category
+.selectByCategory {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+
+  background-color: $lightBg;
+  padding: 2% 5%;
+
+  h4 {
+    text-align: left;
+    font-size: 1.8rem;
+  }
+
+  &__col {
+    text-align: left;
+
+    &__item {
+      a {
+        color: $primaryColor;
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+
+      span {
+        color: $text;
+      }
+
+      hr {
+        width: 90%;
+        margin: 2% 0;
+      }
+    }
   }
 }
