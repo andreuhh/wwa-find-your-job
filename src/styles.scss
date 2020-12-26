@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/styles/variables';
 @import "@fortawesome/fontawesome-free/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap');
 
 /* You can add global styles to this file, and also import other style files */
 /*
@@ -18,4 +19,16 @@ Reset
   /* added later */
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h4 {
+  font-size: 2rem;
 }

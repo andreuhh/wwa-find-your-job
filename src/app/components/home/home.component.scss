@@ -1,5 +1,220 @@
 @import '../../../assets/styles/variables';
 
-h1 {
-  color: $primaryColor;
+/*
+=============== 
+HERO
+===============
+*/
+.hero {
+  height: 75vh;
+  background: $lightBg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 100;
+
+  //padding-top: 30vh;
+  h1,
+  h4 {
+    color: $text;
+    padding-bottom: 3%;
+  }
+
+  &__content {
+
+    img {
+      position: relative;
+      top: 150px;
+      left: -32%;
+    }
+
+  }
+
+}
+
+
+.hero__container {
+  width: 80vw; // without this i have a problem
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  color: $whiteColor;
+
+  &--search {
+    width: 80%;
+    //background-color: rgba(0, 108, 181, 0.8);
+    height: 100px;
+  }
+
+
+  button.showMore {
+    margin-top: 20px;
+    border: 1px solid $whiteColor;
+    padding: 7px 30px;
+    color: $whiteColor;
+    font-size: 1.2rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+
+.hero__container--search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 3%;
+}
+
+.search-box {
+  display: flex;
+  //background-color: red;
+  justify-content: space-around;
+
+  input {
+    width: 100%;
+    margin-right: 2%;
+    font-size: 1.1rem;
+    color: gray;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border: 1px solid $lightRed;
+
+    &:nth-of-type(2) {
+      width: 30%;
+    }
+  }
+
+  button {
+    background-color: $lightRed;
+    padding: 15px 25px;
+    border: none;
+    color: $whiteColor;
+    font-weight: bold;
+    font-size: 1.4rem;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.afterSearch {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  width: 35%;
+  font-size: .8rem;
+  font-size: 200;
+}
+
+@media (max-width: 1300px) {
+  .hero {
+    &__container {
+      &--info {
+        p {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .hero {
+    height: 100vh;
+
+    &__content {
+      padding-top: 15%;
+    }
+
+    &__container {
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+
+      &--search {
+        width: 100%;
+      }
+
+      &--info {
+        margin-top: 20px;
+        text-align: center;
+        width: 58%;
+        margin-left: 0px;
+
+        p {
+          text-align: center;
+          font-size: 1rem;
+        }
+
+        h5 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    height: 100vh;
+
+    h1 {
+      font-size: 1.7rem;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+    }
+
+    &__container {
+      width: 95vw; // without this i have a problem
+
+
+      &--search {
+        width: 100%;
+
+        .aboveSearch {
+          width: 100%;
+        }
+
+        .afterSearch {
+          width: 65%;
+        }
+      }
+
+      &--info {
+        display: none;
+        width: 70%;
+
+
+        p {
+          text-align: center;
+          font-size: 1rem;
+        }
+
+        h5 {
+          text-align: center;
+        }
+      }
+
+    }
+
+    .search-box {
+      input {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .hero {
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
 }
