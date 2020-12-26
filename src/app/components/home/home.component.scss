@@ -6,7 +6,7 @@ HERO
 ===============
 */
 .hero {
-  height: 75vh;
+  height: 600px;
   background: $lightBg;
   display: flex;
   justify-content: center;
@@ -26,13 +26,12 @@ HERO
     img {
       position: relative;
       top: 150px;
-      left: -32%;
+      left: -40%;
     }
 
   }
 
 }
-
 
 .hero__container {
   width: 80vw; // without this i have a problem
@@ -71,14 +70,12 @@ HERO
 
 .search-box {
   display: flex;
-  //background-color: red;
   justify-content: space-around;
 
   input {
     width: 100%;
     margin-right: 2%;
     font-size: 1.1rem;
-    color: gray;
     padding: 15px;
     border: none;
     outline: none;
@@ -124,11 +121,6 @@ HERO
 
 @media (max-width: 970px) {
   .hero {
-    height: 100vh;
-
-    &__content {
-      padding-top: 15%;
-    }
 
     &__container {
       flex-direction: column;
@@ -158,63 +150,43 @@ HERO
   }
 }
 
-@media (max-width: 500px) {
+
+@media (max-width: 768px) {
   .hero {
-    height: 100vh;
-
-    h1 {
-      font-size: 1.7rem;
-    }
-
-    h4 {
-      font-size: 1.1rem;
-    }
-
-    &__container {
-      width: 95vw; // without this i have a problem
-
-
-      &--search {
-        width: 100%;
-
-        .aboveSearch {
-          width: 100%;
-        }
-
-        .afterSearch {
-          width: 65%;
-        }
-      }
-
-      &--info {
+    &__content {
+      img {
         display: none;
-        width: 70%;
-
-
-        p {
-          text-align: center;
-          font-size: 1rem;
-        }
-
-        h5 {
-          text-align: center;
-        }
       }
+    }
+  }
 
+  .search-box {
+    flex-direction: column;
+
+    input,
+    input:nth-of-type(2) {
+      width: 100%;
     }
 
-    .search-box {
-      input {
-        margin-right: 0;
-      }
+    input:first-of-type {
+      margin-top: 150px;
+    }
+
+    input,
+    button {
+      margin-top: 15px;
     }
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 500px) {
   .hero {
     h1 {
-      font-size: 1.4rem;
+      font-size: 3rem;
+    }
+
+    h4 {
+      font-size: 1.5rem;
     }
   }
 }
