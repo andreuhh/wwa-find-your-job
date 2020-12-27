@@ -278,7 +278,8 @@ main {
     &__item {
       padding: 10px;
       border-radius: 20px;
-      background-color: palegoldenrod;
+      background-color: $primaryColor;
+      color: white;
     }
   }
 }

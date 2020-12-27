@@ -245,11 +245,19 @@ main {
         margin-right: 10%;
         font-size: 1.5rem;
 
+
         input {
           margin: 2% 0 5% 0;
           padding: 3%;
           width: 100%;
           border: 1px solid $lightGray;
+          transition: .1s ease-in;
+          outline: none;
+        }
+
+        input:focus,
+        input:active {
+          border: 1px solid $lightRed !important;
         }
       }
     }
@@ -326,7 +334,8 @@ main {
     &__item {
       padding: 10px;
       border-radius: 20px;
-      background-color: palegoldenrod;
+      background-color: $primaryColor;
+      color: white;
     }
   }
 }
