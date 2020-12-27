@@ -9,7 +9,7 @@ import { GetJobDataService } from '../../services/get-job-data.service';
 })
 export class HomeComponent implements OnInit {
   inputContent: string;
-
+  pageNumber = 1
   public jobData = [];
 
   //constructor(private _getJobDataService: GetJobDataService) { }
