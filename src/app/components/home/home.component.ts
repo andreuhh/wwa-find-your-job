@@ -10,12 +10,15 @@ import { GetJobDataService } from '../../services/get-job-data.service';
 export class HomeComponent implements OnInit {
   inputContent: string;
 
-  data: Array<any>
+  //data: Array<any>
+  jobData: any
+  jobResults: Array<any>
 
   //constructor(private _getJobDataService: GetJobDataService) { }
 
   constructor(private getJobDataService: GetJobDataService) {
-    this.data = new Array<any>()
+    this.jobData = new Object()
+    this.jobResults = new Array<any>()
 
     /*this.http.get('https://www.themuse.com/api/public/jobs?page=10&descending=true')
       .toPromise()
@@ -24,18 +27,15 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.inputContent = 'Milano';
-    //this.http.get('https://www.themuse.com/api/public/jobs').subscribe(res => { this.testo = res[0]; });
-    //console.log(this.testo)
 
-    //this._getJobDataService.getJobData()
-    //  .subscribe(data => this.jobData = data);
   }
 
   getDataFromApi() {
     this.getJobDataService.getJobData().subscribe((data) => {
       console.log(data)
-      this.data = data;
+      this.jobData = data;
+      this.jobResults = data.results
+      console.log(this.jobResults)
     })
   }
 }

@@ -9,7 +9,8 @@ import { Observable } from 'rxjs'
 })
 export class GetJobDataService {
 
-  private _url: string = 'https://jsonplaceholder.typicode.com/posts'
+  //private _url: string = 'https://jsonplaceholder.typicode.com/posts'
+  private _url: string = 'https://www.themuse.com/api/public/jobs?page=10&descending=true'
   constructor(private http: HttpClient) { }
 
   getJobData(): Observable<any> {
