@@ -31,19 +31,21 @@
     </div>
 </div>
 <main>
-  <h3>Aggiunti di recente</h3>
+  <h3>Risultati ricerca</h3>
   <h5>Aziende straordinarie sono alla ricerca di grandi talenti</h5>
   <section class="cardSection">
   <div class="cardRow">
     <div *ngFor="let result of jobResults" class="card">
-      <h5 routerLink="/detail">Nome azienda</h5>
-      <i class="fas fa-map-pin"><span>Sede azienda</span></i>
-      <h5>Web Developer</h5>
+      <h5 routerLink="/detail">{{result.company.name}}</h5>
+      <i class="fas fa-map-pin"><span>{{result.locations[0].name}}</span></i>
+      <h5>{{result.name}}</h5>
       <div class="card__flexCont">
-        <i class="fas fa-file-contract"><span>Tipo contratto</span></i>
-        <i class="fas fa-hand-holding-usd"><span>Retribuzione</span></i>
+        <i class="fas fa-file-contract"><span>Type: {{result.type}}</span></i>
+        <p>Experience :<span>{{result.levels[0].name}}</span></p>
       </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quo quis culpa ut consectetur autem enim debitis facere quisquam amet?</p>
+      <i class="fas fa-hand-holding-usd"><span>Retribuzione</span></i>
+      <p>DESCRIPTION HERE Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <!--<p>{{result.contents}}</p>-->
       <div class="skillsCont">
         <div class="skillsCont__item">React Native</div>
         <div class="skillsCont__item">Javascript</div>
