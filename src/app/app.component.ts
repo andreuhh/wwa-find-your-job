@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'search-job';
+
+  onActivate(event) {
+    window.scroll(0, 0);
+  }
 }
+
+

@@ -236,7 +236,7 @@ main {
     h5 {
       cursor: pointer;
 
-      &:nth-of-type(2) {
+      &:first-of-type {
         font-weight: 700;
       }
     }
