@@ -263,7 +263,12 @@ main {
       align-items: center;
 
       p {
+        font-weight: 500;
         padding-bottom: 15px;
+      }
+
+      span {
+        font-weight: 400;
       }
 
       i:first-of-type {
