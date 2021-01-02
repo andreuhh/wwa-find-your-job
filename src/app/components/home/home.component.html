@@ -12,7 +12,7 @@
           <div class="search-box">
             <input type="text" placeholder="Che lavoro stai cercando?">
             <input type="text" placeholder="Città...">
-            <button type="button">Cerca</button>
+            <button (click)="getDataFromApi()" type="button">Cerca</button>
             <!--<input [(ngModel)]="this.inputContent" type="text" placeholder="Città, Regione, Provincia, Via...">-->
             <!--<button (click)="this.clickTrova()" type="button">Trova</button>-->
           </div>
@@ -35,7 +35,7 @@
   <h5>Aziende straordinarie sono alla ricerca di grandi talenti</h5>
   <section class="cardSection">
   <div class="cardRow">
-    <div class="card">
+    <div *ngFor="let d of data" class="card">
       <h5 routerLink="/detail">Nome azienda</h5>
       <i class="fas fa-map-pin"><span>Sede azienda</span></i>
       <h5>Web Developer</h5>

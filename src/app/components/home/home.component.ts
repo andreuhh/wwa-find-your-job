@@ -9,15 +9,17 @@ import { GetJobDataService } from '../../services/get-job-data.service';
 })
 export class HomeComponent implements OnInit {
   inputContent: string;
-  pageNumber = 1
-  public jobData = [];
+
+  data: Array<any>
 
   //constructor(private _getJobDataService: GetJobDataService) { }
 
-  constructor(private http: HttpClient) {
-    this.http.get('https://www.themuse.com/api/public/jobs?page=10&descending=true')
+  constructor(private getJobDataService: GetJobDataService) {
+    this.data = new Array<any>()
+
+    /*this.http.get('https://www.themuse.com/api/public/jobs?page=10&descending=true')
       .toPromise()
-      .then(data => console.log(data))
+      .then(data => console.log(data))*/
 
   }
 
@@ -30,4 +32,10 @@ export class HomeComponent implements OnInit {
     //  .subscribe(data => this.jobData = data);
   }
 
+  getDataFromApi() {
+    this.getJobDataService.getJobData().subscribe((data) => {
+      console.log(data)
+      this.data = data;
+    })
+  }
 }
