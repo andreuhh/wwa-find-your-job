@@ -11,8 +11,8 @@ import { Observable } from 'rxjs'
 })
 export class HomeComponent implements OnInit {
   inputContent: string;
-  jobTerm = 'Sales';
-  cityTerm = 'NewYork';
+  jobTerm = 'Engineering';
+  cityTerm = 'Italy';
   pagination = 1;
 
   //data: Array<any>
@@ -54,7 +54,9 @@ export class HomeComponent implements OnInit {
   }
 
   getJobData(): Observable<any> {
-    return this.http.get<any>('https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=' + this.pagination + '&location=' + this.cityTerm);
+    return this.http.get<any>(
+      'https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=' + this.pagination + '&location=' + this.cityTerm
+    );
   }
 
   getDataFromApi() {

@@ -21,8 +21,14 @@
     </div>
 </div>
 <main>
-  <h3>Risultati ricerca</h3>
-  <h5>Aziende straordinarie sono alla ricerca di grandi talenti</h5>
+  <div *ngIf="this.jobData.page_count">
+    <h3>Risultati ricerca</h3>
+    <h5>Aziende straordinarie sono alla ricerca di grandi talenti</h5>
+  </div>
+  
+
+  <h5 *ngIf="!this.jobData.page_count">Non è presente nessun risultato nella tua ricerca</h5>
+
   <section class="cardSection">
   <div class="cardRow">
     <div *ngFor="let result of jobResults" class="card">
