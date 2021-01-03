@@ -4,15 +4,15 @@
       <img src="../../../assets/images/img1.png" width="200px" height="auto" alt="">
 
       <h1>We Work Happy</h1>
-      <h4>Il tuo prossimo lavoro ti sta aspettando</h4>
+      <h4>Your next job is waiting for you</h4>
 
       <div class="hero__container">
         <div class="hero__container--search">
 
           <div class="search-box">
-            <input (input)="jobTerm = $event.target.value" type="text" placeholder="Che lavoro stai cercando?">
-            <input (input)="cityTerm = $event.target.value" type="text" placeholder="Città...">
-            <button (click)="getDataFromApi()" type="button">Cerca</button>
+            <input (input)="jobTerm = $event.target.value" type="text" placeholder="Job category">
+            <input (input)="cityTerm = $event.target.value" type="text" placeholder="City">
+            <button (click)="getDataFromApi()" type="button">Search</button>
           </div>
         </div>
 
@@ -22,8 +22,8 @@
 </div>
 <main>
   <div *ngIf="this.jobData.page_count">
-    <h3>Risultati ricerca</h3>
-    <h5>Aziende straordinarie sono alla ricerca di grandi talenti</h5>
+    <h3>Search results</h3>
+    <h5>Extraordinary companies are looking for new great talent</h5>
   </div>
   
 
