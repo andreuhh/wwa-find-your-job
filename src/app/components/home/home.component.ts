@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { GetJobDataService } from '../../services/get-job-data.service';
 
+import { Observable } from 'rxjs'
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,8 +11,8 @@ import { GetJobDataService } from '../../services/get-job-data.service';
 })
 export class HomeComponent implements OnInit {
   inputContent: string;
-  jobTerm = '';
-  cityTerm = '';
+  jobTerm = 'Sales';
+  cityTerm = 'NewYork';
 
   //data: Array<any>
   jobData: any
@@ -18,25 +20,32 @@ export class HomeComponent implements OnInit {
 
   //constructor(private _getJobDataService: GetJobDataService) { }
 
-  constructor(private getJobDataService: GetJobDataService) {
+  constructor(private getJobDataService: GetJobDataService, private http: HttpClient) {
     this.jobData = new Object()
     this.jobResults = new Array<any>()
 
-    /*this.http.get('https://www.themuse.com/api/public/jobs?page=10&descending=true')
+    /*this.http.get('https://www.themuse.com/api/public/jobs?category=Engineering&page=5&location=Italy')
       .toPromise()
       .then(data => console.log(data))*/
 
   }
 
   ngOnInit(): void {
+    this.getDataFromApi();
+  }
 
+  //private _url: string = 'https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=1&location=' + this.cityTerm
+
+  getJobData(): Observable<any> {
+    return this.http.get<any>('https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=1&location=' + this.cityTerm);
   }
 
   getDataFromApi() {
-    this.getJobDataService.getJobData().subscribe((data) => {
-      console.log(data)
+    this.getJobData().subscribe((data) => {
       this.jobData = data;
+      console.log(this.jobData)
       this.jobResults = data.results
+      console.log(this.jobResults)
 
       if (this.jobTerm) {
         console.log(this.jobTerm)
