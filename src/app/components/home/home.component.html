@@ -43,7 +43,7 @@
       </div>-->
     </div>
 
-    <div class="card">
+    <!--<div class="card">
       <h5>Nome azienda</h5>
       <i class="fas fa-map-pin"><span>Sede azienda</span></i>
       <h5>Web Developer</h5>
@@ -57,9 +57,9 @@
         <div class="skillsCont__item">Javascript</div>
         <div class="skillsCont__item">Flutter</div>
       </div>
-    </div>
+    </div>-->
 
-    <div class="card">
+    <!--<div class="card">
       <h5>Nome azienda</h5>
       <i class="fas fa-map-pin"><span>Sede azienda</span></i>
       <h5>Web Developer</h5>
@@ -73,9 +73,9 @@
         <div class="skillsCont__item">Javascript</div>
         <div class="skillsCont__item">Flutter</div>
       </div>
-    </div>
+    </div>-->
 
-    <div class="card card--twoCol">
+    <!--<div class="card card--twoCol">
       <h5>Nome azienda</h5>
       <i class="fas fa-map-pin"><span>Sede azienda</span></i>
       <h5>Web Developer</h5>
@@ -89,11 +89,11 @@
         <div class="skillsCont__item">Javascript</div>
         <div class="skillsCont__item">Flutter</div>
       </div>
-    </div>
+    </div>-->
   </div>
 
   <div class="paginationCont">
-    <div class="paginationCont__changePage">
+    <div (click)="decrementPagination()" class="paginationCont__changePage">
       <i class="fas fa-angle-left"></i>
       <p>Previous</p>
     </div>
@@ -106,7 +106,7 @@
         <p>{{this.jobData.page_count}}</p>
       </div>
     </div>
-    <div class="paginationCont__changePage">
+    <div (click)="incrementPagination()" class="paginationCont__changePage">
       <p>Next</p>
       <i class="fas fa-angle-right"></i>
     </div>

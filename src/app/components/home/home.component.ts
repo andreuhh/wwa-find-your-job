@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   inputContent: string;
   jobTerm = 'Sales';
   cityTerm = 'NewYork';
+  pagination = 1;
 
   //data: Array<any>
   jobData: any
@@ -36,8 +37,18 @@ export class HomeComponent implements OnInit {
 
   //private _url: string = 'https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=1&location=' + this.cityTerm
 
+  incrementPagination() {
+    this.pagination += 1;
+    this.getDataFromApi();
+  }
+
+  decrementPagination() {
+    this.pagination -= 1;
+    this.getDataFromApi();
+  }
+
   getJobData(): Observable<any> {
-    return this.http.get<any>('https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=1&location=' + this.cityTerm);
+    return this.http.get<any>('https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=' + this.pagination + '&location=' + this.cityTerm);
   }
 
   getDataFromApi() {
