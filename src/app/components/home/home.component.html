@@ -98,7 +98,7 @@
     </div>-->
   </div>
 
-  <div class="paginationCont">
+  <div *ngIf="this.jobData.page_count" class="paginationCont">
     <div (click)="decrementPagination()" class="paginationCont__changePage">
       <i class="fas fa-angle-left"></i>
       <p>Previous</p>
@@ -125,13 +125,13 @@
     </div>
     <div class="selectByCategory__col">
       <div class="selectByCategory__col__item">
-        <a>Ingegnieri<span> ( 324 )</span></a>
+        <a>Account Management<span> ( 324 )</span></a>
         <hr>
-        <a>Tecnici specializzati<span> ( 240 )</span></a>
+        <a>Creative & Design<span> ( 240 )</span></a>
         <hr>
-        <a>Ingegnieri<span> ( 324 )</span></a>
+        <a>Data Science<span> ( 324 )</span></a>
         <hr>
-        <a>Tecnici specializzati<span> ( 240 )</span></a>
+        <a>Education<span> ( 240 )</span></a>
         <hr>
       </div>
     </div>
