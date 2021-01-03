@@ -39,11 +39,17 @@ export class HomeComponent implements OnInit {
 
   incrementPagination() {
     this.pagination += 1;
+    if (this.pagination + 1 > this.jobData.page_count) {
+      this.pagination = 1;
+    }
     this.getDataFromApi();
   }
 
   decrementPagination() {
     this.pagination -= 1;
+    if (this.pagination - 1 < 1) {
+      this.pagination = this.jobData.page_count;
+    }
     this.getDataFromApi();
   }
 
