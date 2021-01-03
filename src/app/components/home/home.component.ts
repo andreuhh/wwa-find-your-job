@@ -9,6 +9,8 @@ import { GetJobDataService } from '../../services/get-job-data.service';
 })
 export class HomeComponent implements OnInit {
   inputContent: string;
+  jobTerm = '';
+  cityTerm = '';
 
   //data: Array<any>
   jobData: any
@@ -35,8 +37,15 @@ export class HomeComponent implements OnInit {
       console.log(data)
       this.jobData = data;
       this.jobResults = data.results
-      console.log(this.jobResults)
-      console.log(this.jobData.page)
+
+      if (this.jobTerm) {
+        console.log(this.jobTerm)
+      }
+
+      if (this.cityTerm) {
+        console.log(this.cityTerm)
+      }
+
     })
   }
 }

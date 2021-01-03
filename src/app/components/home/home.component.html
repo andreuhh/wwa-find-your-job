@@ -10,22 +10,12 @@
         <div class="hero__container--search">
 
           <div class="search-box">
-            <input type="text" placeholder="Che lavoro stai cercando?">
-            <input type="text" placeholder="Città...">
+            <input (input)="jobTerm = $event.target.value" type="text" placeholder="Che lavoro stai cercando?">
+            <input (input)="cityTerm = $event.target.value" type="text" placeholder="Città...">
             <button (click)="getDataFromApi()" type="button">Cerca</button>
-            <!--<input [(ngModel)]="this.inputContent" type="text" placeholder="Città, Regione, Provincia, Via...">-->
-            <!--<button (click)="this.clickTrova()" type="button">Trova</button>-->
           </div>
         </div>
 
-        <!--<div class="hero__container--info">
-          <h5>Cerchi un mutuo?</h5>
-          <p>Sei nel posto giusto</p>
-          <p>Trova la soluzione per te</p>
-
-          
-          <button class="showMore" type="button">Scopri di più</button>
-        </div>-->
       </div>
 
     </div>
@@ -102,71 +92,6 @@
     </div>
   </div>
 
-  <!--<div class="cardRow">
-    <div class="card">
-      <h5>Nome azienda</h5>
-      <i class="fas fa-map-pin"><span>Sede azienda</span></i>
-      <h5>Web Developer</h5>
-      <div class="card__flexCont">
-        <i class="fas fa-file-contract"><span>Tipo contratto</span></i>
-        <i class="fas fa-hand-holding-usd"><span>Retribuzione</span></i>
-      </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quo quis culpa ut consectetur autem enim debitis facere quisquam amet?</p>
-      <div class="skillsCont">
-        <div class="skillsCont__item">React Native</div>
-        <div class="skillsCont__item">Javascript</div>
-        <div class="skillsCont__item">Flutter</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h5>Nome azienda</h5>
-      <i class="fas fa-map-pin"><span>Sede azienda</span></i>
-      <h5>Web Developer</h5>
-      <div class="card__flexCont">
-        <i class="fas fa-file-contract"><span>Tipo contratto</span></i>
-        <i class="fas fa-hand-holding-usd"><span>Retribuzione</span></i>
-      </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quo quis culpa ut consectetur autem enim debitis facere quisquam amet?</p>
-      <div class="skillsCont">
-        <div class="skillsCont__item">React Native</div>
-        <div class="skillsCont__item">Javascript</div>
-        <div class="skillsCont__item">Flutter</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h5>Nome azienda</h5>
-      <i class="fas fa-map-pin"><span>Sede azienda</span></i>
-      <h5>Web Developer</h5>
-      <div class="card__flexCont">
-        <i class="fas fa-file-contract"><span>Tipo contratto</span></i>
-        <i class="fas fa-hand-holding-usd"><span>Retribuzione</span></i>
-      </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quo quis culpa ut consectetur autem enim debitis facere quisquam amet?</p>
-      <div class="skillsCont">
-        <div class="skillsCont__item">React Native</div>
-        <div class="skillsCont__item">Javascript</div>
-        <div class="skillsCont__item">Flutter</div>
-      </div>
-    </div>
-
-    <div class="card card--twoCol">
-      <h5>Nome azienda</h5>
-      <i class="fas fa-map-pin"><span>Sede azienda</span></i>
-      <h5>Web Developer</h5>
-      <div class="card__flexCont">
-        <i class="fas fa-file-contract"><span>Tipo contratto</span></i>
-      <i class="fas fa-hand-holding-usd"><span>Retribuzione</span></i>
-      </div> 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quo quis culpa ut consectetur autem enim debitis facere quisquam amet?</p>
-      <div class="skillsCont">
-        <div class="skillsCont__item">React Native</div>
-        <div class="skillsCont__item">Javascript</div>
-        <div class="skillsCont__item">Flutter</div>
-      </div>
-    </div>
-  </div>-->
   <div class="paginationCont">
     <div class="paginationCont__changePage">
       <i class="fas fa-angle-left"></i>
