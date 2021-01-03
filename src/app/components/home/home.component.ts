@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
       this.jobData = data;
       this.jobResults = data.results
       console.log(this.jobResults)
+      console.log(this.jobData.page)
     })
   }
 }

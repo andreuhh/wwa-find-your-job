@@ -102,7 +102,7 @@
     </div>
   </div>
 
-  <div class="cardRow">
+  <!--<div class="cardRow">
     <div class="card">
       <h5>Nome azienda</h5>
       <i class="fas fa-map-pin"><span>Sede azienda</span></i>
@@ -165,6 +165,25 @@
         <div class="skillsCont__item">Javascript</div>
         <div class="skillsCont__item">Flutter</div>
       </div>
+    </div>
+  </div>-->
+  <div class="paginationCont">
+    <div class="paginationCont__changePage">
+      <i class="fas fa-angle-left"></i>
+      <p>Previous</p>
+    </div>
+    <div class="paginationCont__circleCont">
+      <div class="paginationCont__circleCont--circle">
+        <p>{{this.jobData.page}}</p>
+      </div>
+      <p>of</p>
+      <div class="paginationCont__circleCont--circle">
+        <p>{{this.jobData.page_count}}</p>
+      </div>
+    </div>
+    <div class="paginationCont__changePage">
+      <p>Next</p>
+      <i class="fas fa-angle-right"></i>
     </div>
   </div>
 </section>
