@@ -15,6 +15,15 @@ export class HomeComponent implements OnInit {
   cityTerm = 'Italy';
   pagination = 1;
 
+  selectedExperience: any = '';
+  expLevels: any = [
+    'Entry%20Level',
+    'Senior%20Level',
+    'Internship',
+    'management',
+    'Mid%20Level'
+  ]
+
   //data: Array<any>
   jobData: any
   jobResults: Array<any>
@@ -55,7 +64,7 @@ export class HomeComponent implements OnInit {
 
   getJobData(): Observable<any> {
     return this.http.get<any>(
-      'https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=' + this.pagination + '&location=' + this.cityTerm
+      'https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&level=' + this.selectedExperience + '&page=' + this.pagination + '&location=' + this.cityTerm
     );
   }
 
@@ -75,5 +84,10 @@ export class HomeComponent implements OnInit {
       }
 
     })
+  }
+
+  radioChangeHandler(event: any) {
+    this.selectedExperience = event.target.value;
+    console.log(this.selectedExperience)
   }
 }

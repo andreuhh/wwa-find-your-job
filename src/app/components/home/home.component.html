@@ -19,6 +19,17 @@
       </div>
 
     </div>
+
+    <div *ngFor="let level of expLevels">
+      <input 
+      type="radio" 
+      name="experienceLevel" 
+      value="{{level}}"
+      (change)="radioChangeHandler($event)"
+      >
+      <i>{{level}}</i>
+    </div>
+  
 </div>
 <main>
   <div *ngIf="this.jobData.page_count">
