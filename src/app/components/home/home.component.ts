@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { GetJobDataService } from '../../services/get-job-data.service';
-
+import { expLevels } from '../../utils/interfaces';
 import { Observable } from 'rxjs'
 
 @Component({
@@ -15,14 +15,9 @@ export class HomeComponent implements OnInit {
   cityTerm = 'Italy';
   pagination = 1;
 
+  expLevels = expLevels
+
   selectedExperience: any = '';
-  expLevels: any = [
-    'Entry%20Level',
-    'Senior%20Level',
-    'Internship',
-    'management',
-    'Mid%20Level'
-  ]
 
   //data: Array<any>
   jobData: any
@@ -30,7 +25,10 @@ export class HomeComponent implements OnInit {
 
   //constructor(private _getJobDataService: GetJobDataService) { }
 
-  constructor(private getJobDataService: GetJobDataService, private http: HttpClient) {
+  constructor(
+    private getJobDataService: GetJobDataService,
+    private http: HttpClient
+  ) {
     this.jobData = new Object()
     this.jobResults = new Array<any>()
 
