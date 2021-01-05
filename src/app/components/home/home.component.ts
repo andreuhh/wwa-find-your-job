@@ -13,7 +13,7 @@ import { Observable } from 'rxjs'
 export class HomeComponent implements OnInit {
   inputContent: string;
   //jobTerm = 'Engineering';
-  cityTerm = 'Italy';
+  cityTerm = '';
   pagination = 1;
 
   expLevels = expLevels;
@@ -22,18 +22,10 @@ export class HomeComponent implements OnInit {
   catDropdownOpen = false;
   expDropdownOpen = false;
 
-  handleCatDropdown() {
-    this.catDropdownOpen = !this.catDropdownOpen
-    console.log(this.catDropdownOpen)
-  }
-  handleExpDropdown() {
-    this.expDropdownOpen = !this.expDropdownOpen
-    console.log(this.expDropdownOpen)
-  }
-
   selectedExperience: any = '';
   selectedExperienceValue: any = '';
   selectedCategorie: any = '';
+  selectedCategorieValue: any = '';
 
   //data: Array<any>
   jobData: any
@@ -47,11 +39,6 @@ export class HomeComponent implements OnInit {
   ) {
     this.jobData = new Object()
     this.jobResults = new Array<any>()
-
-    /*this.http.get('https://www.themuse.com/api/public/jobs?category=Engineering&page=5&location=Italy')
-      .toPromise()
-      .then(data => console.log(data))*/
-
   }
 
   ngOnInit(): void {
@@ -76,9 +63,10 @@ export class HomeComponent implements OnInit {
     this.getDataFromApi();
   }
 
+
   getJobData(): Observable<any> {
     return this.http.get<any>(
-      'https://www.themuse.com/api/public/jobs?category=' + this.selectedCategorie + '&level=' + this.selectedExperience + '&page=' + this.pagination + '&location=' + this.cityTerm
+      'https://www.themuse.com/api/public/jobs?page=' + this.pagination + '&category=' + this.selectedCategorie + '&level=' + this.selectedExperience + '&location=' + this.cityTerm
     );
   }
 
@@ -89,10 +77,13 @@ export class HomeComponent implements OnInit {
       this.jobResults = data.results
       console.log(this.jobResults)
 
-      if (this.cityTerm) {
-        console.log(this.cityTerm)
+      if (this.catDropdownOpen) {
+        this.catDropdownOpen = false
       }
 
+      if (this.expDropdownOpen) {
+        this.expDropdownOpen = false
+      }
     })
   }
 
@@ -107,12 +98,23 @@ export class HomeComponent implements OnInit {
     if (this.selectedExperienceValue === 'Entry') {
       this.selectedExperience = 'Entry%20Level'
     }
-    console.log(this.selectedExperience)
   }
 
   radioChangeHandlerCategories(event: any) {
     this.selectedCategorie = event.target.value;
 
-    console.log(this.categories)
+  }
+
+  handleCatDropdown() {
+    this.catDropdownOpen = !this.catDropdownOpen
+    if (this.expDropdownOpen) {
+      this.expDropdownOpen = false
+    }
+  }
+  handleExpDropdown() {
+    if (this.catDropdownOpen) {
+      this.catDropdownOpen = false
+    }
+    this.expDropdownOpen = !this.expDropdownOpen
   }
 }

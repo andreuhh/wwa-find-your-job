@@ -1,6 +1,6 @@
 export const categories = [
     'Account Management',
-    'Design',
+    'Creative & Design',
     'Data Science',
     'Education',
     'Finance',
@@ -17,5 +17,5 @@ export const categories = [
     'HR & Recruiting',
     'Marketing & PR',
     'Project & Product Management',
-    'Sales'
+    'Sales',
 ]

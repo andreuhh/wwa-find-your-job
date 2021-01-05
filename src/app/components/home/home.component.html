@@ -55,7 +55,7 @@
               </div>
             </div>
 
-            <input class="textValue" (input)="cityTerm = $event.target.value" type="text" placeholder="City">
+            <input class="textValue" (input)="cityTerm = $event.target.value" type="text" placeholder="{{cityTerm}}">
             <button (click)="getDataFromApi()" type="button">Search</button>
           </div>
         </div>

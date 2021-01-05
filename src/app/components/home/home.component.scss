@@ -65,7 +65,6 @@ HERO
 
 }
 
-
 .search-box {
   display: flex;
   justify-content: space-around;
@@ -448,11 +447,8 @@ main {
     border: 1px solid $lightRed;
     overflow: hidden;
     order: 1;
-
     position: absolute;
     top: 60px;
-
-
 
     &--active {
       max-height: 240px;
@@ -463,6 +459,17 @@ main {
     &--active+.selected::after {
       border-color: $lightRed $lightRed transparent transparent;
       top: 20px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      background: white;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $lightRed;
+      border-radius: 5px;
     }
   }
 }
@@ -504,19 +511,6 @@ main {
   span {
     margin-right: 30px;
   }
-}
-
-
-
-.select-box .options-container::-webkit-scrollbar {
-  width: 10px;
-  background: white;
-  border-radius: 5px;
-}
-
-.select-box .options-container::-webkit-scrollbar-thumb {
-  background: $lightRed;
-  border-radius: 5px;
 }
 
 .select-box .option,
