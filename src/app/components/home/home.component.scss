@@ -40,9 +40,7 @@ HERO
       top: 20%;
       left: -30%;
     }
-
   }
-
 }
 
 .hero__container {
@@ -63,8 +61,6 @@ HERO
     justify-content: center;
     align-content: center;
     padding: 3%;
-
-    background-color: salmon;
   }
 
 }
@@ -437,6 +433,8 @@ main {
   width: 40%;
   flex-direction: column;
   margin-right: 20px;
+  position: relative;
+
 
   .options-container {
     background-color: white;
@@ -451,10 +449,20 @@ main {
     overflow: hidden;
     order: 1;
 
+    position: absolute;
+    top: 60px;
+
+
+
     &--active {
       max-height: 240px;
       opacity: 1;
       overflow-y: scroll;
+    }
+
+    &--active+.selected::after {
+      border-color: $lightRed $lightRed transparent transparent;
+      top: 20px;
     }
   }
 }
@@ -498,10 +506,7 @@ main {
   }
 }
 
-.select-box .options-container.active+.selected::after {
-  border-color: $lightRed $lightRed transparent transparent;
-  top: 20px;
-}
+
 
 .select-box .options-container::-webkit-scrollbar {
   width: 10px;
