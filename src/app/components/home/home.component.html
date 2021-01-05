@@ -79,10 +79,13 @@
   <div *ngIf="this.jobData.page_count">
     <h3>Search results</h3>
     <h5>Extraordinary companies are looking for new great talent</h5>
+    <div>
+      <p>Found :<span>{{this.jobData.total}} </span> results</p>
+    </div>
   </div>
   
 
-  <h5 *ngIf="!this.jobData.page_count">Non è presente nessun risultato nella tua ricerca</h5>
+  <h5 *ngIf="!this.jobData.page_count">There are no results in your search</h5>
 
   <section class="cardSection">
   <div class="cardRow">
