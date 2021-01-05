@@ -46,8 +46,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDataFromApi();
-
-    //this.getDataCompaniesFromApi();
   }
 
   //private _url: string = 'https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=1&location=' + this.cityTerm
@@ -136,19 +134,4 @@ export class HomeComponent implements OnInit {
     this.expDropdownOpen = !this.expDropdownOpen
   }
 
-  getCompaniesData(): Observable<any> {
-    return this.http.get<any>(
-      //'https://www.themuse.com/api/public/companies?page=1'
-      'https://www.themuse.com/api/public/companies/11778'
-    );
-  }
-
-  /*getDataCompaniesFromApi() {
-    this.getCompaniesData().subscribe((d) => {
-      this.companiesData = d
-      console.log('compa')
-      console.log(this.companiesData)
-      console.log('compa')
-    })
-  }*/
 }

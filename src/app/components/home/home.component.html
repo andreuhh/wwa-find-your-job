@@ -8,13 +8,10 @@
         <h4>Your next job is waiting for you</h4>
       </div>
       
-
       <div class="hero__container">
         <div class="hero__container--search">
-
           <div class="search-box">
             <!--<input class="textValue" (input)="jobTerm = $event.target.value" type="text" placeholder="Job category">-->
-
             <div class="select-box">
               <div class="{{this.catDropdownOpen ? 'options-container--active' : 'options-container'}}  options-container">
                 <div *ngFor="let cat of categories" class="option">
@@ -82,7 +79,7 @@
     <div *ngFor="let result of jobResults" class="card">
       <h5><a [routerLink]="['/detail', result.id]">{{result.name}}</a></h5>
       <i class="fas fa-map-pin"><span>{{result.locations[0].name}}</span></i>
-      <h5><a [routerLink]="['/detail', result.company.id]">{{result.company.name}}</a></h5>
+      <h5><a [routerLink]="['/detail-company', result.company.id]">{{result.company.name}}</a></h5>
       <div class="card__flexCont">
         <i class="fas fa-file-contract"><span>Type: {{result.type}}</span></i>
         <p>Experience :<span>{{result.levels[0].name}}</span></p>

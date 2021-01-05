@@ -9,6 +9,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailCompanyComponent } from './components/detail-company/detail-company.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     routingComponents,
     HeaderComponent,
     FooterComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    DetailCompanyComponent
   ],
   imports: [
     BrowserModule,

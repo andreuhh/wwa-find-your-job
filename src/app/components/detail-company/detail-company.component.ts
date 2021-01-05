@@ -3,23 +3,21 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'
 
-
 @Component({
-  selector: 'app-detail',
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+  selector: 'app-detail-company',
+  templateUrl: './detail-company.component.html',
+  styleUrls: ['./detail-company.component.scss']
 })
-export class DetailComponent implements OnInit {
+export class DetailCompanyComponent implements OnInit {
   id
-  detailJobResults: any
+  detailCompanyData: any
 
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
   ) {
-    this.detailJobResults = new Object()
+    this.detailCompanyData = new Object()
   }
-
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get("id");
@@ -28,16 +26,16 @@ export class DetailComponent implements OnInit {
     this.getDataFromApi()
   }
 
-  getDetailData(): Observable<any> {
+  getDetailCompanyData(): Observable<any> {
     return this.http.get<any>(
-      'https://www.themuse.com/api/public/jobs/' + this.id
+      'https://www.themuse.com/api/public/companies/' + this.id
     );
   }
 
   getDataFromApi() {
-    this.getDetailData().subscribe((data) => {
-      this.detailJobResults = data;
-      console.log(this.detailJobResults)
+    this.getDetailCompanyData().subscribe((data) => {
+      this.detailCompanyData = data;
+      console.log(this.detailCompanyData)
     })
   }
 
