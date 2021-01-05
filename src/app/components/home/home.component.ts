@@ -13,7 +13,7 @@ import { Observable } from 'rxjs'
 export class HomeComponent implements OnInit {
   inputContent: string;
   //jobTerm = 'Engineering';
-  cityTerm = '';
+  cityTerm = 'Italy';
   pagination = 1;
 
   expLevels = expLevels;
@@ -102,7 +102,19 @@ export class HomeComponent implements OnInit {
 
   radioChangeHandlerCategories(event: any) {
     this.selectedCategorie = event.target.value;
+    this.selectedCategorieValue = event.target.value;
 
+    if (this.selectedCategorieValue === 'Creative & Design') {
+      this.selectedCategorie = 'Creative%20%26%20Design'
+    }
+
+    if (this.selectedCategorieValue === 'Data Science') {
+      this.selectedCategorie = 'Data%20Science'
+    }
+
+    if (this.selectedCategorieValue === 'Project & Product Management') {
+      this.selectedCategorie = 'Project%20%26%20Product%20Management'
+    }
   }
 
   handleCatDropdown() {

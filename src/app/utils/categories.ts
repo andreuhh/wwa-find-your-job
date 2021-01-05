@@ -1,4 +1,5 @@
 export const categories = [
+    'Engineering',
     'Account Management',
     'Creative & Design',
     'Data Science',
@@ -12,7 +13,6 @@ export const categories = [
     'Business & Strategy',
     'Customer Service',
     'Editorial',
-    'Engineering',
     'Fundraising & Development',
     'HR & Recruiting',
     'Marketing & PR',

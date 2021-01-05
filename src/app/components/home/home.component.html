@@ -31,7 +31,7 @@
               </div>
               <div (click)="handleCatDropdown()" class="selected">
                 <p>Category: </p> 
-                <p>{{this.selectedCategorie}}</p>
+                <p>{{this.selectedCategorieValue}}</p>
               </div>
             </div>
 
@@ -55,7 +55,7 @@
               </div>
             </div>
 
-            <input class="textValue" (input)="cityTerm = $event.target.value" type="text" placeholder="{{cityTerm}}">
+            <input class="textValue" (input)="cityTerm = $event.target.value" type="text" placeholder="Country : {{cityTerm}}">
             <button (click)="getDataFromApi()" type="button">Search</button>
           </div>
         </div>
