@@ -88,6 +88,7 @@ export class HomeComponent implements OnInit {
   }
 
   radioChangeHandlerExpLev(event: any) {
+    this.expDropdownOpen = false
     this.selectedExperienceValue = event.target.value;
     if (this.selectedExperienceValue === 'Senior') {
       this.selectedExperience = 'Senior%20Level'
@@ -101,6 +102,7 @@ export class HomeComponent implements OnInit {
   }
 
   radioChangeHandlerCategories(event: any) {
+    this.catDropdownOpen = false
     this.selectedCategorie = event.target.value;
     this.selectedCategorieValue = event.target.value;
 
@@ -112,7 +114,7 @@ export class HomeComponent implements OnInit {
       this.selectedCategorie = 'Data%20Science'
     }
 
-    if (this.selectedCategorieValue === 'Project & Product Management') {
+    if (this.selectedCategorieValue === 'Management') {
       this.selectedCategorie = 'Project%20%26%20Product%20Management'
     }
   }
