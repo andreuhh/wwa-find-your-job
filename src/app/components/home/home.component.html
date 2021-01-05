@@ -90,7 +90,7 @@
   <section class="cardSection">
   <div class="cardRow">
     <div *ngFor="let result of jobResults" class="card">
-      <h5 routerLink="/detail">{{result.name}}</h5>
+      <h5><a [routerLink]="['/detail', result.id]">{{result.name}}</a></h5>
       <i class="fas fa-map-pin"><span>{{result.locations[0].name}}</span></i>
       <h5 routerLink="/detail">{{result.company.name}}</h5>
       <div class="card__flexCont">

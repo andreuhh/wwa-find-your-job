@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GetJobDataService } from '../../services/get-job-data.service';
 import { expLevels } from '../../utils/expLev';
 import { categories } from '../../utils/categories';
@@ -36,7 +37,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private getJobDataService: GetJobDataService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {
     this.jobData = new Object()
     this.jobResults = new Array<any>()
