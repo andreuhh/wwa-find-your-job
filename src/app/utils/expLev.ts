@@ -1,8 +1,8 @@
 export const expLevels = [
     '',
-    'Entry%20Level',
-    'Senior%20Level',
+    'Entry',
     'Internship',
-    'management',
-    'Mid%20Level'
+    'Mid',
+    'Senior',
+    'management'
 ]

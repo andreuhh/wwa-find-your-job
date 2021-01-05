@@ -13,7 +13,27 @@
         <div class="hero__container--search">
 
           <div class="search-box">
-            <input class="textValue" (input)="jobTerm = $event.target.value" type="text" placeholder="Job category">
+            <!--<input class="textValue" (input)="jobTerm = $event.target.value" type="text" placeholder="Job category">-->
+
+            <div class="select-box">
+              <div class="options-container active">
+                <div *ngFor="let cat of categories" class="option">
+                  <input 
+                   class="radio"
+                    type="radio" 
+                    name="categories" 
+                    value="{{cat}}"
+                    (change)="radioChangeHandlerCategories($event)"
+                  >
+                  <label for="categories">{{cat}}</label>
+                  <!--<i>{{level}}</i>-->
+                </div>
+              </div>
+              <div (click)="handleCatDropdown()" class="selected">
+                <p>Category: </p> 
+                <p>{{this.selectedCategorie}}</p>
+              </div>
+            </div>
 
             <div class="select-box">
               <div class="options-container active">
@@ -23,15 +43,15 @@
                     type="radio" 
                     name="experienceLevel" 
                     value="{{level}}"
-                    (change)="radioChangeHandler($event)"
+                    (change)="radioChangeHandlerExpLev($event)"
                   >
-                  <label for="automobiles">{{level}}</label>
+                  <label for="level">{{level}}</label>
                   <!--<i>{{level}}</i>-->
                 </div>
               </div>
-              <div class="selected">
+              <div (click)="handleExpDropdown()" class="selected">
                 <p>Experience: </p> 
-                <p>{{this.selectedExperience}}</p>
+                <p>{{this.selectedExperienceValue}}</p>
               </div>
             </div>
 

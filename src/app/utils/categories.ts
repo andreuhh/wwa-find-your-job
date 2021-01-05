@@ -1,0 +1,21 @@
+export const categories = [
+    'Account Management',
+    'Design',
+    'Data Science',
+    'Education',
+    'Finance',
+    'Healthcare & Medicine',
+    'Legal',
+    'Operations',
+    'Retail',
+    'Social Media & Community',
+    'Business & Strategy',
+    'Customer Service',
+    'Editorial',
+    'Engineering',
+    'Fundraising & Development',
+    'HR & Recruiting',
+    'Marketing & PR',
+    'Project & Product Management',
+    'Sales'
+]
