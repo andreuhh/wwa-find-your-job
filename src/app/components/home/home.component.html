@@ -16,7 +16,7 @@
             <!--<input class="textValue" (input)="jobTerm = $event.target.value" type="text" placeholder="Job category">-->
 
             <div class="select-box">
-              <div class="options-container active">
+              <div class="{{this.catDropdownOpen ? 'options-container active' : 'options-container'}}  options-container">
                 <div *ngFor="let cat of categories" class="option">
                   <input 
                    class="radio"
@@ -36,7 +36,7 @@
             </div>
 
             <div class="select-box">
-              <div class="options-container active">
+              <div  class="{{this.expDropdownOpen ? 'options-container active' : 'options-container'}}  options-container">
                 <div *ngFor="let level of expLevels" class="option">
                   <input 
                    class="radio"
