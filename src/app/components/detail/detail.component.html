@@ -3,26 +3,22 @@
 <main>
     <div class="infoCont">
         <i class="fas fa-chevron-left backTosearch"><span>Torna alla ricerca</span></i>
-        <p class="bold">Data : <span>20 Ottobre 2020</span></p>
-        <h4>Electronic engeneer</h4>
-        <p class="bold">Azienda : <span>Bending Spoons</span></p>
-        <p class="bold">Sede : <span>Milano</span></p>
-        <p class="bold">Categoria : <span>IT</span></p>
-        <p class="bold">Descrizione : 
+        <p class="bold">Publication date : <span>{{this.detailJobResults?.publication_date | date }}</span></p>
+        <h4>{{this.detailJobResults?.name}}</h4>
+        <p class="bold">Company : <span>{{this.detailJobResults?.company?.name}}</span></p>
+        <p class="bold">Location : <span>{{this.detailJobResults?.locations[0]?.name}}</span></p>
+        <p class="bold">Categoria : <span>{{this.detailJobResults?.categories[0]?.name}}</span></p>
+        <p class="bold">Experience : <span>{{this.detailJobResults?.levels[0].name}}</span></p>
+        <!--<p class="bold">Categoria : <span>Categoria</span></p>-->
+        <p class="bold">Description : 
+            <span [innerHTML]="this.detailJobResults?.contents"></span>
+        </p>
+        <p class="bold">Skills richieste : <span>Node Js, React, Flutter, Angular</span></p>
+        <p class="bold">Refs : 
             <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Aliquam iste numquam consectetur? Officia eaque dolorem fuga nam! Officiis
-             magni voluptas beatae doloribus ex maxime alias.
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Aliquam iste numquam consectetur? Officia eaque dolorem fuga nam! Officiis
-             magni voluptas beatae doloribus ex maxime alias.
+            <a href="{{this.detailJobResults?.refs.landing_page}}">{{this.detailJobResults?.refs.landing_page}}</a>
             </span>
         </p>
-        <p class="bold">Livello : <span>Junior</span></p>
-        <p class="bold">Skills richieste : <span>Node Js, React, Flutter, Angular</span></p>
-        <p class="bold">Stipendio : <span>25.000 - 30.000</span></p>
     </div>
-
-
 </main>
 <app-footer></app-footer>
