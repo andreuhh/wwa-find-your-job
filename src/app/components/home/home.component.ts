@@ -13,7 +13,6 @@ import { Observable } from 'rxjs'
 })
 export class HomeComponent implements OnInit {
   inputContent: string;
-  //jobTerm = 'Engineering';
   cityTerm = 'Italy';
   pagination = 1;
 
@@ -25,13 +24,13 @@ export class HomeComponent implements OnInit {
 
   selectedExperience: any = '';
   selectedExperienceValue: any = '';
-  selectedCategorie: any = '';
+  selectedCategorie: any = 'Engineering';
   selectedCategorieValue: any = '';
 
   //data: Array<any>
   jobData: any
   jobResults: Array<any>
-  companiesData: Array<any>
+  //companiesData: Array<any>
 
   //constructor(private _getJobDataService: GetJobDataService) { }
 
@@ -48,7 +47,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getDataFromApi();
 
-    this.getDataCompaniesFromApi();
+    //this.getDataCompaniesFromApi();
   }
 
   //private _url: string = 'https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=1&location=' + this.cityTerm
@@ -144,12 +143,12 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  getDataCompaniesFromApi() {
+  /*getDataCompaniesFromApi() {
     this.getCompaniesData().subscribe((d) => {
       this.companiesData = d
       console.log('compa')
       console.log(this.companiesData)
       console.log('compa')
     })
-  }
+  }*/
 }

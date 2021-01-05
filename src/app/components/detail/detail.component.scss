@@ -36,3 +36,19 @@ main {
     color: $textMedium;
   }
 }
+
+@media (max-width: 768px) {
+  main {
+    padding: 1%;
+  }
+
+  .infoCont {
+    padding: 3%;
+  }
+}
+
+@media (max-width: 414px) {
+  .infoCont {
+    padding: 5%;
+  }
+}
