@@ -23,6 +23,7 @@ HERO
     left: 50%;
     top: 20%;
     transform: translateX(-50%);
+    width: 100%;
 
     h1,
     h4 {
@@ -36,8 +37,8 @@ HERO
 
     img {
       position: relative;
-      top: 150px;
-      left: -40%;
+      top: 20%;
+      left: -30%;
     }
 
   }
@@ -527,10 +528,6 @@ main {
 .select-box .option:hover {
   background: $lightRed;
   color: white;
-}
-
-.select-box .option .radio {
-  /*display: none;*/
 }
 
 .select-box .option {

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { GetJobDataService } from '../../services/get-job-data.service';
-import { expLevels } from '../../utils/interfaces';
+import { expLevels } from '../../utils/expLev';
 import { Observable } from 'rxjs'
 
 @Component({
