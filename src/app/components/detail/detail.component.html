@@ -8,7 +8,7 @@
         
         <p class="bold">Publication date : <span>{{this.detailJobResults?.publication_date | date }}</span></p>
         <h4>{{this.detailJobResults?.name}}</h4>
-        <p class="bold">Company : <span>{{this.detailJobResults?.company?.name}}</span></p>
+        <p class="bold">Company : <span><a [routerLink]="['/detail-company', this.detailJobResults.company.id]">{{this.detailJobResults?.company?.name}}</a></span></p>
         <p class="bold">Location : <span>{{this.detailJobResults?.locations[0].name}}</span></p>
         <p class="bold">Categoria : <span>{{this.detailJobResults?.categories[0].name}}</span></p>
         <p class="bold">Experience : <span>{{this.detailJobResults?.levels[0].name}}</span></p>
