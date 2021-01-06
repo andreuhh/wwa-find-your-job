@@ -134,4 +134,10 @@ export class HomeComponent implements OnInit {
     this.expDropdownOpen = !this.expDropdownOpen
   }
 
+
+  // go from buttom to card section when change page
+  onScrollTop(event) {
+    window.scroll(0, 1000);
+  }
+
 }
