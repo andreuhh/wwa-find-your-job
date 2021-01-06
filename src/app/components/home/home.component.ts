@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
   //private _url: string = 'https://www.themuse.com/api/public/jobs?category=' + this.jobTerm + '&page=1&location=' + this.cityTerm
 
   incrementPagination() {
-    this.pagination += 1;
+    this.pagination++;
     if (this.pagination + 1 > this.jobData.page_count) {
       this.pagination = 1;
     }
@@ -59,9 +59,9 @@ export class HomeComponent implements OnInit {
   }
 
   decrementPagination() {
-    this.pagination -= 1;
+    this.pagination--;
     if (this.pagination - 1 < 1) {
-      this.pagination = this.jobData.page_count;
+      this.pagination = this.jobData.page_count - 1;
     }
     this.getDataFromApi();
   }
