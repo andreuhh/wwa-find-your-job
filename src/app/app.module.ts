@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 //import { DetailComponent } from './components/detail/detail.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
-import { SearchPageComponent } from './components/search-page/search-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailCompanyComponent } from './components/detail-company/detail-company.component';
 
@@ -19,7 +18,6 @@ import { DetailCompanyComponent } from './components/detail-company/detail-compa
     routingComponents,
     HeaderComponent,
     FooterComponent,
-    SearchPageComponent,
     DetailCompanyComponent
   ],
   imports: [
