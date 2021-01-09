@@ -323,6 +323,15 @@ main {
   //background-color: red;
   margin: 2% 0%;
   text-align: center;
+
+  .numCont {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 15px 5% 0 5%;
+  }
+
 }
 
 .cardSection {

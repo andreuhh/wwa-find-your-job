@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   inputContent: string;
   cityTerm = 'Italy';
   pagination = 1;
+  elementsPerPage = 5
 
   expLevels = expLevels;
   categories = categories;
@@ -30,9 +31,7 @@ export class HomeComponent implements OnInit {
   //data: Array<any>
   jobData: any
   jobResults: Array<any>
-  //companiesData: Array<any>
 
-  //constructor(private _getJobDataService: GetJobDataService) { }
 
   constructor(
     private getJobDataService: GetJobDataService,
@@ -66,19 +65,39 @@ export class HomeComponent implements OnInit {
     this.getDataFromApi();
   }
 
+  handleElementsInPage(event: any) {
+    this.elementsPerPage = event.target.value
+    if (event.target.value === '5') {
+      this.elementsPerPage = 5
+    } else if (event.target.value === '10') {
+      this.elementsPerPage = 10
+    } else if (event.target.value === '20') {
+      this.elementsPerPage = 20
+    }
+    this.getDataFromApi()
+  }
+
   getJobData(): Observable<any> {
     return this.http.get<any>(
       'https://www.themuse.com/api/public/jobs?page=' + this.pagination + '&category=' + this.selectedCategorie + '&level=' + this.selectedExperience + '&location=' + this.cityTerm
     );
   }
 
+
   getDataFromApi() {
     try {
       this.getJobData().subscribe((data) => {
+        console.log('ciao')
+        console.log(this.jobData.items_per_page)
+        console.log('ciao')
         this.jobData = data;
-        console.log(this.jobData)
+
         this.jobResults = data.results
-        console.log(this.jobResults)
+        this.jobResults.length = this.elementsPerPage
+
+
+
+        console.log(this.jobData)
 
         if (this.catDropdownOpen) {
           this.catDropdownOpen = false
@@ -93,6 +112,7 @@ export class HomeComponent implements OnInit {
       console.error(error);
     }
   }
+
 
   radioChangeHandlerExpLev(event: any) {
     this.expDropdownOpen = false
@@ -138,7 +158,6 @@ export class HomeComponent implements OnInit {
     }
     this.expDropdownOpen = !this.expDropdownOpen
   }
-
 
   // go from buttom to card section when change page
   onScrollTop(event) {
