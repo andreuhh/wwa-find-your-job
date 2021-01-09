@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<main>
+<main *ngIf="!this.isError">
     <div class="infoCont">
         <a routerLink="">
             <i class="fas fa-chevron-left backTosearch"><span>Torna alla ricerca</span></i>

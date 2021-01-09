@@ -12,6 +12,7 @@ import { Observable } from 'rxjs'
 export class DetailComponent implements OnInit {
   id
   detailJobResults: any
+  isError = false
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +24,6 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get("id");
-    console.log(this.id)
     //this.detail = this.detailService.getDetail(id)
     this.getDataFromApi()
   }
@@ -35,10 +35,16 @@ export class DetailComponent implements OnInit {
   }
 
   getDataFromApi() {
-    this.getDetailData().subscribe((data) => {
-      this.detailJobResults = data;
-      console.log(this.detailJobResults)
-    })
+    try {
+      this.getDetailData().subscribe((data) => {
+        this.detailJobResults = data;
+        console.log(this.detailJobResults)
+        console.log(this.isError)
+      })
+    }
+    catch (error) {
+      this.isError = true
+      console.error(error);
+    }
   }
-
 }
