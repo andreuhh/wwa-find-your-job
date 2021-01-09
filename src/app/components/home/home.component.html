@@ -63,13 +63,9 @@
 <main>
   <div *ngIf="this.jobData.page_count">
     <h3>Search results</h3>
-    <h5>Extraordinary companies are looking for new great talent</h5>
-
-    
-    
+    <h5>Extraordinary companies are looking for new great talent</h5>  
   </div>
   
-
   <h5 *ngIf="!this.jobData.page_count">There are no results in your search</h5>
 
   <div class="numCont">
@@ -88,45 +84,40 @@
   </div>
 
   <section class="cardSection">
-  <div class="cardRow">
-    <div *ngFor="let result of jobResults" class="card">
-      <h5><a [routerLink]="['/detail', result.id]">{{result.name}}</a></h5>
-      <i class="fas fa-map-pin"><span>{{result.locations[0].name}}</span></i>
-      <h5><a [routerLink]="['/detail-company', result.company.id]">{{result.company.name}}</a></h5>
-      <div class="card__flexCont">
-        <i class="fas fa-file-contract"><span>Type: {{result.type}}</span></i>
-        <p>Experience :<span>{{result.levels[0].name}}</span></p>
+    <div class="cardRow">
+      <div *ngFor="let result of jobResults" class="card">
+        <h5><a [routerLink]="['/detail', result.id]">{{result.name}}</a></h5>
+        <i class="fas fa-map-pin"><span>{{result.locations[0].name}}</span></i>
+        <h6><a [routerLink]="['/detail-company', result.company.id]">{{result.company.name}}</a></h6>
+        <div class="card__flexCont">
+          <i class="fas fa-file-contract"><span>Type: {{result.type}}</span></i>
+          <p>Experience :<span>{{result.levels[0].name}}</span></p>
+        </div>
+        <!--<i class="fas fa-hand-holding-usd"><span>Retribuzione</span></i>-->
+        <!--<p>DESCRIPTION HERE Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
+        <p [innerHTML]="result.contents | slice:0:200"></p>
       </div>
-      <!--<i class="fas fa-hand-holding-usd"><span>Retribuzione</span></i>-->
-      <!--<p>DESCRIPTION HERE Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>-->
-      <p [innerHTML]="result.contents | slice:0:200"></p>
-      <!--<div class="skillsCont">
-        <div class="skillsCont__item">React Native</div>
-        <div class="skillsCont__item">Javascript</div>
-        <div class="skillsCont__item">Flutter</div>
-      </div>-->
     </div>
-  </div>
 
-  <div *ngIf="this.jobData.page_count" class="paginationCont">
-    <div (click)="onScrollTop($event)" (click)="decrementPagination()" class="paginationCont__changePage">
-      <i class="fas fa-angle-left"></i>
-      <p>Previous</p>
-    </div>
-    <div class="paginationCont__circleCont">
-      <div class="paginationCont__circleCont--circle">
-        <p>{{this.jobData.page}}</p>
+    <div *ngIf="this.jobData.page_count" class="paginationCont">
+      <div (click)="onScrollTop($event)" (click)="decrementPagination()" class="paginationCont__changePage">
+        <i class="fas fa-angle-left"></i>
+        <p>Previous</p>
       </div>
-      <p>of</p>
-      <div class="paginationCont__circleCont--circle">
-        <p>{{this.jobData.page_count - 1}}</p>
+      <div class="paginationCont__circleCont">
+        <div class="paginationCont__circleCont--circle">
+          <p>{{this.jobData.page}}</p>
+        </div>
+        <p>of</p>
+        <div class="paginationCont__circleCont--circle">
+          <p>{{this.jobData.page_count - 1}}</p>
+        </div>
+      </div>
+      <div (click)="onScrollTop($event)" (click)="incrementPagination()" class="paginationCont__changePage">
+        <p>Next</p>
+        <i class="fas fa-angle-right"></i>
       </div>
     </div>
-    <div (click)="onScrollTop($event)" (click)="incrementPagination()" class="paginationCont__changePage">
-      <p>Next</p>
-      <i class="fas fa-angle-right"></i>
-    </div>
-  </div>
 </section>
 
   <!--<section class="selectByCategory">
