@@ -6,12 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  hamburgerMenuOpen = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  clickMenu(): void { this.hamburgerMenuOpen = !this.hamburgerMenuOpen }
 }

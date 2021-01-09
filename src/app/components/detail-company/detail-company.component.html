@@ -1,25 +1,39 @@
 <app-header></app-header>
 
-<main>
+<main *ngIf="!this.isError">
     <div class="infoCont">
-        <a routerLink="">
-            <i class="fas fa-chevron-left backTosearch"><span>Torna alla ricerca</span></i>
-        </a>
-        
-        <p class="bold">Publication date : <span>{{this.detailCompanyData?.publication_date | date}}</span></p>
-        <h4>{{this.detailCompanyData?.name}}</h4>      
-        <p class="bold">Location : <span>{{this.detailCompanyData?.locations[0].name}}</span></p>
-        <p class="bold">Categoria : <span>{{this.detailCompanyData?.industries[0].name}}</span></p>
-        <p class="bold">Size : <span>{{this.detailCompanyData?.size?.name}}</span></p>
-        <p class="bold">Description : 
-            <span>{{this.detailCompanyData?.description}}</span>
-        </p>
-        <img src="{{this.detailCompanyData?.refs?.logo_image}}" width="80px" height="80px" alt="">
-        <p class="bold">Refs : 
-            <span>
-            <a>{{this.detailCompanyData?.refs?.landing_page}}</a>
-            </span>
-        </p>
+        <div class="infoCont__left">
+            <a routerLink="">
+                <i class="fas fa-chevron-left backTosearch"><span>Torna alla ricerca</span></i>
+            </a>
+            
+            <p class="bold">Publication date : <span>{{this.detailCompanyData?.publication_date | date}}</span></p>
+            <h4>{{this.detailCompanyData?.name}}</h4>      
+            <p class="bold">Location : <span>{{this.detailCompanyData?.locations[0].name}}</span></p>
+            <p class="bold">Categoria : <span><a [routerLink]="['/detail-company', this.detailCompanyData?.company?.id]">{{this.detailCompanyData?.industries[0].name}}</a></span></p>
+            <p class="bold">Size : <span>{{this.detailCompanyData?.size?.name}}</span></p>
+            <p class="bold">Description : 
+                <span>{{this.detailCompanyData?.description}}</span>
+            </p>
+            <p class="bold">Refs : 
+                <span>
+                <a>{{this.detailCompanyData?.refs?.landing_page}}</a>
+                </span>
+            </p>
+            <h5>Working in {{this.detailCompanyData?.name}}</h5>
+            <div class="imgCont">
+                <div [ngStyle]="{backgroundImage: 'url(' + this.detailCompanyData?.refs?.f1_image + ') '}" class="jobImg"></div>
+                <div [ngStyle]="{backgroundImage: 'url(' + this.detailCompanyData?.refs?.f2_image + ') '}" class="jobImg"></div>
+                <div [ngStyle]="{backgroundImage: 'url(' + this.detailCompanyData?.refs?.f3_image + ') '}" class="jobImg"></div>
+            </div>
+            
+        </div>
+       
+        <div class="logoCont">
+            <!--<img src="{{this.detailCompanyData?.refs?.logo_image}}" width="80px" height="80px" alt="">-->
+            <div [ngStyle]="{backgroundImage: 'url(' + this.detailCompanyData?.refs?.logo_image + ') '}" class="logoCont__logoImg"></div>
+        </div>
     </div>
+    
 </main>
 <app-footer></app-footer>

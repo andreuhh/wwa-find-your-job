@@ -11,6 +11,7 @@ import { Observable } from 'rxjs'
 export class DetailCompanyComponent implements OnInit {
   id
   detailCompanyData: any
+  isError = false
 
   constructor(
     private route: ActivatedRoute,
@@ -33,10 +34,16 @@ export class DetailCompanyComponent implements OnInit {
   }
 
   getDataFromApi() {
-    this.getDetailCompanyData().subscribe((data) => {
-      this.detailCompanyData = data;
-      console.log(this.detailCompanyData)
-    })
+    try {
+      this.getDetailCompanyData().subscribe((data) => {
+        this.detailCompanyData = data;
+        console.log(this.detailCompanyData)
+      })
+    }
+    catch (error) {
+      this.isError = true
+      console.error(error);
+    }
   }
 
 }

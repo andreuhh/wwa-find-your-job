@@ -73,20 +73,25 @@ export class HomeComponent implements OnInit {
   }
 
   getDataFromApi() {
-    this.getJobData().subscribe((data) => {
-      this.jobData = data;
-      console.log(this.jobData)
-      this.jobResults = data.results
-      console.log(this.jobResults)
+    try {
+      this.getJobData().subscribe((data) => {
+        this.jobData = data;
+        console.log(this.jobData)
+        this.jobResults = data.results
+        console.log(this.jobResults)
 
-      if (this.catDropdownOpen) {
-        this.catDropdownOpen = false
-      }
+        if (this.catDropdownOpen) {
+          this.catDropdownOpen = false
+        }
 
-      if (this.expDropdownOpen) {
-        this.expDropdownOpen = false
-      }
-    })
+        if (this.expDropdownOpen) {
+          this.expDropdownOpen = false
+        }
+      })
+    }
+    catch (error) {
+      console.error(error);
+    }
   }
 
   radioChangeHandlerExpLev(event: any) {

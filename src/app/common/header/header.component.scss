@@ -208,30 +208,3 @@ Header
     align-items: center;
   }
 }
-
-@media (max-width: 768px) {
-
-  .header__menu,
-  .header__menu--open {
-    padding-top: 20%;
-  }
-}
-
-@media (max-width: 500px) {
-
-  .header__menu,
-  .header__menu--open {
-    height: 100vh;
-    padding-top: 35%;
-  }
-
-  .hamburger {
-    top: 25%;
-  }
-}
-
-@media (max-width: 414px) {
-  .hamburger {
-    top: 15%;
-  }
-}
