@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   inputContent: string;
   cityTerm = 'Italy';
   pagination = 1;
-  elementsPerPage = 5
+  elementsPerPage = 10
 
   expLevels = expLevels;
   categories = categories;
@@ -87,15 +87,9 @@ export class HomeComponent implements OnInit {
   getDataFromApi() {
     try {
       this.getJobData().subscribe((data) => {
-        console.log('ciao')
-        console.log(this.jobData.items_per_page)
-        console.log('ciao')
         this.jobData = data;
-
         this.jobResults = data.results
         this.jobResults.length = this.elementsPerPage
-
-
 
         console.log(this.jobData)
 
