@@ -11,7 +11,7 @@ I didn't use any libraires, only Angular components
 
 ## deploy on Firebase
 
-
+i deployed the app at this link: https://job-app-d3445.web.app/
 
 ## npm install
 
