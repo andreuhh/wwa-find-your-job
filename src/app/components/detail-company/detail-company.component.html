@@ -7,21 +7,19 @@
         </a>
         
         <p class="bold">Publication date : <span>{{this.detailCompanyData?.publication_date | date}}</span></p>
-        <h4>{{this.detailCompanyData?.name}}</h4>
+        <h4>{{this.detailCompanyData?.name}}</h4>      
         <p class="bold">Location : <span>{{this.detailCompanyData?.locations[0].name}}</span></p>
         <p class="bold">Categoria : <span>{{this.detailCompanyData?.industries[0].name}}</span></p>
         <p class="bold">Size : <span>{{this.detailCompanyData?.size?.name}}</span></p>
-        <!--<p class="bold">Categoria : <span>Categoria</span></p>-->
         <p class="bold">Description : 
             <span>{{this.detailCompanyData?.description}}</span>
         </p>
-        <!--<p class="bold">Skills richieste : <span>Node Js, React, Flutter, Angular</span></p>-->
+        <img src="{{this.detailCompanyData?.refs?.logo_image}}" width="80px" height="80px" alt="">
         <p class="bold">Refs : 
             <span>
             <a>{{this.detailCompanyData?.refs?.landing_page}}</a>
             </span>
         </p>
-        <img src="{{this.detailCompanyData?.refs?.logo_image}}" width="80px" height="80px" alt="">
     </div>
 </main>
 <app-footer></app-footer>

@@ -8,18 +8,18 @@
         
         <p class="bold">Publication date : <span>{{this.detailJobResults?.publication_date | date }}</span></p>
         <h4>{{this.detailJobResults?.name}}</h4>
-        <p class="bold">Company : <span><a [routerLink]="['/detail-company', this.detailJobResults.company.id]">{{this.detailJobResults?.company?.name}}</a></span></p>
+        <p class="bold">Company : <span><a [routerLink]="['/detail-company', this.detailJobResults?.company?.id]">{{this.detailJobResults?.company?.name}}</a></span></p>
         <p class="bold">Location : <span>{{this.detailJobResults?.locations[0].name}}</span></p>
         <p class="bold">Category : <span>{{this.detailJobResults?.categories[0].name}}</span></p>
         <p class="bold">Experience : <span>{{this.detailJobResults?.levels[0].name}}</span></p>
-        <!--<p class="bold">Categoria : <span>Categoria</span></p>-->
+        <p class="bold">Categoria : <span>Categoria</span></p>
         <p class="bold">Description : 
             <span [innerHTML]="this.detailJobResults?.contents"></span>
         </p>
         <!--<p class="bold">Skills richieste : <span>Node Js, React, Flutter, Angular</span></p>-->
         <p class="bold">Refs : 
             <span>
-            <a href="{{this.detailJobResults?.refs.landing_page}}">{{this.detailJobResults?.refs.landing_page}}</a>
+            <a href="{{this.detailJobResults?.refs?.landing_page}}">{{this.detailJobResults?.refs?.landing_page}}</a>
             </span>
         </p>
     </div>
